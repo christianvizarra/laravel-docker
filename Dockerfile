@@ -18,7 +18,7 @@ RUN service mysqld start
 RUN /usr/bin/curl -sS https://getcomposer.org/installer |/usr/bin/php
 RUN /bin/mv composer.phar /usr/local/bin/composer
 RUN /usr/local/bin/composer create-project laravel/laravel /var/www/html --prefer-dist
-RUN /bin/chown www-data:www-data -R /var/www/laravel/storage /var/www/html/bootstrap/cache
+RUN chmod -R 777 /var/www/html/storage
 
 EXPOSE 80
 EXPOSE 443
