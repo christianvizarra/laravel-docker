@@ -23,4 +23,4 @@ RUN chmod -R 777 /var/www/html/storage
 EXPOSE 80
 EXPOSE 443
 
-ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+CMD service httpd start
