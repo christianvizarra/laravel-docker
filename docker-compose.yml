@@ -1,0 +1,9 @@
+db:
+  image: mysql
+  volumes:
+   - /var/lib/mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=secret
+   - MYSQL_DATABASE=ebdb
+   - MYSQL_USER=mysql
+   - MYSQL_PASSWORD=secret
