@@ -11,6 +11,7 @@ RUN echo "Hello World" >> public/index.html
 RUN sed -i "s/html\"\>/html\/public\"\>/g"  /etc/httpd/conf/httpd.conf
 RUN sed -i "s/DirectoryIndex index.html/DirectoryIndex index.php index.html/g" /etc/httpd/conf/httpd.conf
 RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/httpd/conf/httpd.conf
+RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
 RUN service httpd restart
 RUN touch /etc/sysconfig/network & echo "HOSTNAME=localhost" > /etc/sysconfig/network
 RUN service mysqld start
